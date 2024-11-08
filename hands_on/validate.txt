@@ -1,0 +1,82 @@
+Following material/06/04_pds4_workshop_hands_on-validate.pptx slide 5
+1 more warning expected [warning.product_not_registered], ignore it
+
+$ cd pds4_workshop/1_validation
+$ validate cam_raw_sc_cam3_image_20241018t001002_61_f__t0004.xml
+1 product(s)
+3 error(s)
+1 warning(s)
+
+$ validate cam_raw_sc_cam3_image_20241018t001002_61_f__t0004.xml --add-context-products local_context_products.json
+2 product(s)
+0 error(s)
+2 warning(s)
+
+$ validate cam_raw_sc_cam3_image_20241018t001002_61_f__t0004.xml --add-context-products local_context_products.json --disable-context-mismatch-warnings
+2 product(s)
+0 error(s)
+1 warning(s)
+
+$ cd exercise_1
+$ validate exercise_1.xml --add-context-product ../local_context_products.json --disable-context-mismatch-warnings
+2 product(s)
+2 error(s)
+1 warning(s)
+
+Fixing the errors in the xml
+
+$ validate exercise_1.xml --add-context-product ../local_context_products.json --disable-context-mismatch-warnings
+2 product(s)
+0 error(s)
+1 warning(s)
+
+$ cd ../exercise_2
+$ validate exercise_2.xml --add-context-products ../local_context_products.json --disable-context-mismatch-warnings
+2 product(s)
+7 error(s)
+1 warning(s)
+
+Fixing the errors in the xml
+
+$ validate exercise_2.xml --add-context-products ../local_context_products.json --disable-context-mismatch-warnings
+2 product(s)
+0 error(s)
+1 warning(s)
+
+$ cd ../exercise_3
+$ validate mag_der_sc_ib_a001_e2k_00000_20230803.xml --add-context-products ../local_context_products.json --disable-context-mismatch-warnings
+3 product(s)
+12 error(s)
+1 warning(s)
+
+Fixing the errors in the xml
+
+$ validate mag_der_sc_ib_a001_e2k_00000_20230803.xml --add-context-products ../local_context_products.json --disable-context-mismatch-warnings
+2 product(s)
+0 error(s)
+1 warning(s)
+
+$ cd ../exercise_4
+$ validate em16_tgo_nmd --add-context-products ../local_context_products.json --disable-context-mismatch-warnings --rule pds4.bundle
+23 product(s)
+2 error(s)
+40 warning(s)
+
+try to solve
+
+  FAIL: file:/Users/gregoireh/Documents/events-meeting/2024.11-pds4-esac/pds4_workshop/1_validation/exercise_4/em16_tgo_nmd/document/EAICD_Reference_Documents/RD06_Vandaele_et_al_Science_Objectives.xml
+      ERROR  [error.pdf.file.not_pdfa_compliant]   Validation failed for flavour PDF/A-1b in file RD06_Vandaele_et_al_Science_Objectives.pdf.
+        15 product validation(s) completed
+
+same for RD06_Vandaele_et_al_Science_Objectives.pdf
+
+TODO
+
+$ cd ../exercise_5
+$ validate cas_cal_sc_20231223T101918-20231223T101922-27132-79-NIR-1129309508-49-2.xml --add-context-products ../local_context_products.json --disable-context-mismatch-warnings
+2 product(s)
+0 error(s)
+2 warning(s)
+
+Open with PDS4 viewer to see image matrix order not good.
+Fixed xml and good.

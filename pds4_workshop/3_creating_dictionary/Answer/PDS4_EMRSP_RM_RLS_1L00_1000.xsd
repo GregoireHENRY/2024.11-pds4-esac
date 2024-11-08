@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!-- PDS4 XML/Schema for Name Space Id:emrsp_rm_rls  Version:1.0.0.0 - Thu Oct 31 15:45:09 CET 2024 -->
+  <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
+  <!-- *** This PDS4 product schema is an operational deliverable. *** -->
+  <!--                                                                           -->
+  <!--               Dictionary Stack                                            -->
+  <!-- 1.21.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.0.0.0 - emrsp_rm_rls: - ExoMars RFM RAMAN Laser Spectrometer LDD        -->
+  <!--                                                                           -->
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="https://psa.esa.int/psa/emrsp/rm/rls/v1"
+    xmlns:emrsp_rm_rls="https://psa.esa.int/psa/emrsp/rm/rls/v1"
+    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="1.0.0.0">
+ 
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1L00.xsd"/>
+ 
+  <xs:annotation>
+    <xs:documentation>
+
+		The ExoMars RSP RAMAN Laser Spectrometer local data dictionary contains classes and/or attributes
+		that describe mission specific information about the ExoMars RSP RLS payload.
+	
+    </xs:documentation>
+  </xs:annotation>
+ 
+  <xs:element name="Autofocus_Data" type="emrsp_rm_rls:Autofocus_Data"> </xs:element>
+  <xs:element name="Instrument_Status" type="emrsp_rm_rls:Instrument_Status"> </xs:element>
+
+  <xs:complexType name="Autofocus_Data">
+    <xs:annotation>
+      <xs:documentation> This class collects all those ancillary
+        parameters necessary to further describe and characterize the
+        science data products generated and related to the AUTOFOCUS
+        settings. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="step_mode" type="emrsp_rm_rls:step_mode" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="autofocus_range" type="emrsp_rm_rls:autofocus_range" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="autofocus_position_tolerance" type="emrsp_rm_rls:autofocus_position_tolerance" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="preamplifier_gain" type="emrsp_rm_rls:preamplifier_gain" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="number_of_points_on_curve" type="emrsp_rm_rls:number_of_points_on_curve" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="focus_position_calculated" type="emrsp_rm_rls:focus_position_calculated" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="laser_channel" type="emrsp_rm_rls:laser_channel" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="end_of_test_trigger" type="emrsp_rm_rls:end_of_test_trigger" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="end_of_test_timestamp" type="emrsp_rm_rls:end_of_test_timestamp" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="snr" type="emrsp_rm_rls:snr" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="enabling_algorithm_mask" type="emrsp_rm_rls:enabling_algorithm_mask" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="criticality" type="emrsp_rm_rls:criticality" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="emrsp_rm_rls:step_mode = ('0', '1', '2')"/> -->
+    <!-- <xs:assert test="emrsp_rm_rls:preamplifier_gain = ('0', '1', '2', '3')"/> -->
+    <!-- <xs:assert test="emrsp_rm_rls:laser_channel = ('1', '2')"/> -->
+    <!-- <xs:assert test="emrsp_rm_rls:end_of_test_trigger = ('0', '1')"/> -->
+    <!-- <xs:assert test="emrsp_rm_rls:criticality = ('02', '03')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Instrument_Status">
+    <xs:annotation>
+      <xs:documentation> This class collects all those ancillary
+        parameters necessary to further describe and characterize the
+        science data products generated and related to the status of the
+        instrument. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="number_of_samples" type="emrsp_rm_rls:number_of_samples" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="sampling_frequency" type="emrsp_rm_rls:sampling_frequency" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="instrument_status_type" type="emrsp_rm_rls:instrument_status_type" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="beginning_of_test_timestamp" type="emrsp_rm_rls:beginning_of_test_timestamp" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="rotation_angle" type="emrsp_rm_rls:rotation_angle" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="criticality" type="emrsp_rm_rls:criticality" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="emrsp_rm_rls:instrument_status_type = ('1', '2', '4')"/> -->
+    <!-- <xs:assert test="emrsp_rm_rls:criticality = ('02', '03')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+    <xs:annotation>
+      <xs:documentation>This section contains the simpleTypes that provide more constraints
+        than those at the base data type level. The simpleTypes defined here build on the base data
+        types. This is another component of the common dictionary and therefore falls within the
+        common namespace.
+      </xs:documentation>
+    </xs:annotation>
+
+  <xs:simpleType name="autofocus_position_tolerance">
+    <xs:annotation>
+      <xs:documentation> Tolerance of the Autofocus position during
+        Autofocus operation. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="65535"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="autofocus_range">
+    <xs:annotation>
+      <xs:documentation> Encoder range of the Autofocus.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="65535"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="beginning_of_test_timestamp">
+    <xs:annotation>
+      <xs:documentation> Timestamp at the beginning of the test (since
+        the last power on of RAMAN). </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="65535"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="criticality">
+    <xs:annotation>
+      <xs:documentation> Critical levels of the Science TM packets.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="enabling_algorithm_mask">
+    <xs:annotation>
+      <xs:documentation> Mask indicating which acquisition parameter
+        calculation algorithms will be executed. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="12167928680721"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="end_of_test_timestamp">
+    <xs:annotation>
+      <xs:documentation> Timestamp at the end of the test (since the
+        last power on of RAMAN). </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="65535"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="end_of_test_trigger">
+    <xs:annotation>
+      <xs:documentation> Event that triggered the end of the test.
+        Values:§ - 0x00 if range is covered - 0x01 if Test timed out.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="focus_position_calculated">
+    <xs:annotation>
+      <xs:documentation> Focus position after algorithm.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="4095"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="instrument_status_type">
+    <xs:annotation>
+      <xs:documentation> The first 4 bits (MSB ones) determine the
+        Current SW mode as follows: 1 -> StandBy; 2-> Ready; 4 -> Safe.
+        The next 4 bits (LSB ones) determine the test ID.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="laser_channel">
+    <xs:annotation>
+      <xs:documentation> Laser channel switch on (From System
+        Parameter). Values: - 01 Nominal Laser - 02 Redundant Laser.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="number_of_points_on_curve">
+    <xs:annotation>
+<xs:documentation> Number Of Points on Curve. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="1"/>
+     <xs:maxInclusive value="900"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="number_of_samples">
+    <xs:annotation>
+      <xs:documentation> Number of samples to be measured in the test.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="65535"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="preamplifier_gain">
+    <xs:annotation>
+      <xs:documentation> Preamplifier Gain at the end of the Autofocus.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="rotation_angle_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-180"/>
+     <xs:maxInclusive value="180"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="rotation_angle">
+    <xs:annotation>
+      <xs:documentation>rotation angle, not actually an rls
+        attribute</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="emrsp_rm_rls:rotation_angle_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="sampling_frequency">
+    <xs:annotation>
+      <xs:documentation> Sampling frequency for the commanded test.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="65535"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="snr">
+    <xs:annotation>
+      <xs:documentation> Onboard calculated SNR value of the reference
+        frame acquired with Final Ti. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="4095"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="step_mode">
+    <xs:annotation>
+      <xs:documentation> Step Mode controls how a stepper motor
+        operates, there are three commonly used excitation modes for
+        stepper motors, full step, quarter step and microstepping. These
+        excitation modes have an effect on both the running properties
+        and torque the motor delivers. - 0 = FullStep - 1 = QuarterStep
+        - 2 = MicroStep. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

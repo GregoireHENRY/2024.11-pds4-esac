@@ -1,0 +1,271 @@
+PDS4 Local Data Dictionary Processing Report
+
+Configuration:
+   LDDTool Version        15.1.0
+   LDD Version Id:        1.0.0.0
+   LDD Label Version Id:  1.27
+   LDD Discipline (T/F):  false
+   LDD Namespace URL:     https://psa.esa.int/psa/
+   LDD URN Prefix:        urn:esa:psa:
+   Time                   Thu Oct 31 15:45:09 CET 2024
+   Common Schema          [PDS4_PDS_1L00.xsd]
+   Common Schematron      [PDS4_PDS_1L00.sch]
+   IM Version Id:         1.21.0.0
+   IM Namespace Id:       pds
+   IM Label Version Id:   1.27
+   IM Object Model        [UpperModel.pont]
+   IM Data Dictionary     [dd11179.pins]
+   IM Glossary            [Glossary.pins]
+   IM Document Spec       [DMDocument.pins]
+
+Parameters:
+   Input File             [/Users/tlim/Workshop/lddingest_workshop_answer_1.0.xml]
+   PDS Processing         true
+   LDD Processing         true
+   Discipline LDD         false
+   Mission LDD            true
+   Write Attr Elements    false
+   Merge with Master      false
+
+Summary:
+   Classes                2
+   Attributes             17
+   Associations           18
+   Error messages         0
+   Warning messages       0
+   Information messages   0
+
+Detailed validation messages
+
+Parsed Input - Header:
+   LDD Name               ExoMars RFM RAMAN Laser Spectrometer LDD
+   LDD Version            1.0.0.0
+   Full Name              Andrea D'Ottavio
+   Steward                psa
+   Namespace Id           emrsp_rm_rls
+   Comment                
+		The ExoMars RSP RAMAN Laser Spectrometer local data dictionary contains classes and/or attributes
+		that describe mission specific information about the ExoMars RSP RLS payload.
+	
+   Last Modification Time 2020-01-31T10:11:46.802Z
+   PDS4 Merge Flag        false
+
+Parsed Input - Attributes:
+
+   name                   instrument_status_type
+   version                1.21
+   value data type        ASCII_NonNegative_Integer
+   description             The first 4 bits (MSB ones) determine the Current SW mode as follows: 1 -> StandBy; 2-> Ready; 4 -> Safe. The next 4 bits (LSB ones) determine the test ID. 
+
+   name                   beginning_of_test_timestamp
+   version                1.21
+   value data type        ASCII_NonNegative_Integer
+   description             Timestamp at the beginning of the test (since the last power on of RAMAN). 
+   minimum value          0
+   maximum value          65535
+
+   name                   snr
+   version                1.21
+   value data type        ASCII_NonNegative_Integer
+   description             Onboard calculated SNR value of the reference frame acquired with Final Ti. 
+   minimum value          0
+   maximum value          4095
+
+   name                   enabling_algorithm_mask
+   version                1.21
+   value data type        ASCII_NonNegative_Integer
+   description             Mask indicating which acquisition parameter calculation algorithms will be executed. 
+   minimum value          0
+   maximum value          12167928680721
+
+   name                   number_of_samples
+   version                1.21
+   value data type        ASCII_NonNegative_Integer
+   description             Number of samples to be measured in the test. 
+   minimum value          0
+   maximum value          65535
+
+   name                   sampling_frequency
+   version                1.21
+   value data type        ASCII_NonNegative_Integer
+   description             Sampling frequency for the commanded test. 
+   minimum value          0
+   maximum value          65535
+
+   name                   end_of_test_trigger
+   version                1.21
+   value data type        ASCII_NonNegative_Integer
+   description             Event that triggered the end of the test. Values:§ - 0x00 if range is covered - 0x01 if Test timed out. 
+
+   name                   end_of_test_timestamp
+   version                1.21
+   value data type        ASCII_NonNegative_Integer
+   description             Timestamp at the end of the test (since the last power on of RAMAN). 
+   minimum value          0
+   maximum value          65535
+
+   name                   laser_channel
+   version                1.21
+   value data type        ASCII_NonNegative_Integer
+   description             Laser channel switch on (From System Parameter). Values: - 01 Nominal Laser - 02 Redundant Laser. 
+
+   name                   step_mode
+   version                1.21
+   value data type        ASCII_NonNegative_Integer
+   description             Step Mode controls how a stepper motor operates, there are three commonly used excitation modes for stepper motors, full step, quarter step and microstepping. These excitation modes have an effect on both the running properties and torque the motor delivers. - 0 = FullStep - 1 = QuarterStep - 2 = MicroStep. 
+
+   name                   autofocus_range
+   version                1.21
+   value data type        ASCII_Integer
+   description             Encoder range of the Autofocus. 
+   minimum value          0
+   maximum value          65535
+
+   name                   autofocus_position_tolerance
+   version                1.21
+   value data type        ASCII_Integer
+   description             Tolerance of the Autofocus position during Autofocus operation. 
+   minimum value          0
+   maximum value          65535
+
+   name                   preamplifier_gain
+   version                1.21
+   value data type        ASCII_Integer
+   description             Preamplifier Gain at the end of the Autofocus. 
+
+   name                   number_of_points_on_curve
+   version                1.21
+   value data type        ASCII_NonNegative_Integer
+   description             Number Of Points on Curve. 
+   minimum value          1
+   maximum value          900
+
+   name                   focus_position_calculated
+   version                1.21
+   value data type        ASCII_NonNegative_Integer
+   description             Focus position after algorithm. 
+   minimum value          0
+   maximum value          4095
+
+   name                   criticality
+   version                1.21
+   value data type        ASCII_NonNegative_Integer
+   description             Critical levels of the Science TM packets. 
+
+   name                   rotation_angle
+   version                1.21
+   value data type        ASCII_Real
+   description            rotation angle, not actually an rls attribute
+   minimum value          -180
+   maximum value          180
+   unit of measure type   Units_of_Angle
+
+Parsed Input - Classes:
+
+   name                   Instrument_Status
+   description             This class collects all those ancillary parameters necessary to further describe and characterize the science data products generated and related to the status of the instrument. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      emrsp_rm_rls.number_of_samples
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      emrsp_rm_rls.sampling_frequency
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      emrsp_rm_rls.instrument_status_type
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      emrsp_rm_rls.beginning_of_test_timestamp
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      emrsp_rm_rls.rotation_angle
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      emrsp_rm_rls.criticality
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Autofocus_Data
+   description             This class collects all those ancillary parameters necessary to further describe and characterize the science data products generated and related to the AUTOFOCUS settings. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      emrsp_rm_rls.step_mode
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      emrsp_rm_rls.autofocus_range
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      emrsp_rm_rls.autofocus_position_tolerance
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      emrsp_rm_rls.preamplifier_gain
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      emrsp_rm_rls.number_of_points_on_curve
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      emrsp_rm_rls.focus_position_calculated
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      emrsp_rm_rls.laser_channel
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      emrsp_rm_rls.end_of_test_trigger
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      emrsp_rm_rls.end_of_test_timestamp
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      emrsp_rm_rls.snr
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      emrsp_rm_rls.enabling_algorithm_mask
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      emrsp_rm_rls.criticality
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+End of Report

@@ -1,0 +1,7 @@
+Following material/07/01_pds4_workshop_dictionary_creation.pptx
+
+$ cd pds4_workshop/3_dictionary
+$ lddtool -lpdJV 1L00 lddingest_workshop_skeleton_1.0.xml
+0 warning(s)
+0 error(s)
+0 fatal error(s)

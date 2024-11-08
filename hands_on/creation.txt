@@ -1,0 +1,39 @@
+Following material/06/05_pds4_workshop_hands_on-creation.pptx
+1 more warning expected [warning.product_not_registered], ignore it
+
+$ cd pds4_workshop/1_validation
+$ cp template_label.xml a_binary_image.xml
+
+Prepare a_binary_image.xml
+
+$ validate a_binary_image.xml --add-context-products ../1_validation/local_context_products.json --disable-context-mismatch-warnings
+2 product(s)
+0 error(s)
+1 warning(s)
+
+And prepare the other xmls:
+
+$ validate a_binary_image.xml --add-context-products ../1_validation/local_context_products.json --disable-context-mismatch-warnings
+2 product(s)
+0 error(s)
+1 warning(s)
+
+$ validate a_delimited_table.xml --add-context-products ../1_validation/local_context_products.json --disable-context-mismatch-warnings
+2 product(s)
+0 error(s)
+1 warning(s)
+
+$ validate fixed_width_ascii.xml --add-context-products ../1_validation/local_context_products.json --disable-context-mismatch-warnings
+2 product(s)
+0 error(s)
+1 warning(s)
+
+$ validate fits_image.xml --add-context-products ../1_validation/local_context_products.json --disable-context-mismatch-warnings
+2 product(s)
+0 error(s)
+1 warning(s)
+
+$ validate fits_binary_tables.xml --add-context-products ../1_validation/local_context_products.json --disable-context-mismatch-warnings
+2 product(s)
+0 error(s)
+1 warning(s)
